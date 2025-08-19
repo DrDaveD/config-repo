@@ -1,0 +1,14 @@
+name: merge
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  apply-corrections:
+    uses: ./.github/workflows/apply-corrections.yml
+    with:
+      upload-db: true
+      release-db: true
+    secrets: inherit
